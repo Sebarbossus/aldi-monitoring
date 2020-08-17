@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input.submit-btn {
+    margin: 20px auto;
+}
+
+.wrapper {
+    margin: 30px 10px;
+}
+
+.invisible {
+    display: none;
+}
