@@ -76,6 +76,10 @@ mailType.addEventListener("change", () => {
             hideFields(allOptionalFields);
             showFields([incidentNumClass, systemSelectClass, clientSelectClass,idocTypeSelectClass,idocNumberClass, languageClass]);
             break;
+        case "8":
+            hideFields(allOptionalFields);
+            showFields([incidentNumClass, systemSelectClass, clientSelectClass,idocTypeSelectClass,idocNumberClass]);
+            break;
         default:
             hideFields(allOptionalFields);
             break;
@@ -158,6 +162,9 @@ function sendMail() {
             } else {
                 window.open(`mailto:support@aldi-nord.de; ALDI-AMS@realcore.de?cc=holger.thurow@aldi-nord.de; sap-basis@aldi-nord.de; dennis.westermann@aldi-nord.de; daniel.jansen@aldi-nord.de;  jonah.katritzke@aldi-nord.de; lars.staudinger@aldi-nord.de; marvin.sassenbach@aldi-nord.de; daniel.kozlik@aldi-nord.de; melanie.hagen@sap.com; alexander.kremer@aldi-nord.de; sascha.loeffler@aldi-nord.de;&subject=Incident ${incidentNum.value}  AFMS Monitoring SAP Retail ${systemSelect.value} MD${clientSelect.value}, ${idocTypeSelect.value} Fehler IDoc&body=Hallo zusammen,%0D%0A%0D%0Aes ist ein Fehler bei der Verarbeitung des IDoc Typen ${idocTypeSelect.value} in ${systemSelect.value} MD ${clientSelect.value} VST ${posSelect.value} beim ${timeSelect.value} Uhr Monitoring aufgetreten.%0D%0AIDoc mit folgender Nummer:%0D%0A${idocNumber.value}%0D%0A%0D%0ADazu wurde das Ticket ${incidentNum.value} im SolMan erstellt.%0D%0A%0D%0AMit freundlichen Grüßen`)
             }
+            break;
+        case "8":
+            window.open(`mailto:support@aldi-nord.de; ALDI-AMS@realcore.de?cc=holger.thurow@aldi-nord.de; sap-basis@aldi-nord.de; dennis.westermann@aldi-nord.de; daniel.jansen@aldi-nord.de;  jonah.katritzke@aldi-nord.de; lars.staudinger@aldi-nord.de; marvin.sassenbach@aldi-nord.de; daniel.kozlik@aldi-nord.de; melanie.hagen@sap.com; fr-support@aldi.fr; youssef.kistas@aldi.fr; christoph.breitler@aldi.fr; julien.masri@aldi.fr; susan.omar@aldi.fr; alexander.kremer@aldi-nord.de; sascha.loeffler@aldi-nord.de; kristyna.czurilla@aldi-nord.de&subject=${systemSelect.value}-${clientSelect.value} Fehler bei der Verarbeitung des IDoc-Typen ${idocTypeSelect.value}&body=Hallo zusammen,%0D%0A%0D%0Aes ist ein Fehler bei der Verarbeitung des IDoc Typen ${idocTypeSelect.value} bei Mandant ${clientSelect.value} / ${systemSelect.value} beim ${timeSelect.value} Uhr Monitoring aufgetreten.%0D%0AIDoc mit folgender Nummer:%0D%0A${idocNumber.value}%0D%0A%0D%0ADazu wurde das Ticket ${incidentNum.value} im SolMan erstellt.%0D%0A%0D%0AMit freundlichen Grüßen`);
             break;
         default:
             hideFields(allOptionalFields);
